@@ -299,6 +299,10 @@ button {
   align-items: center;
 }
 
+.project.invisible {
+  display: none;
+}
+
 .project__img {
   max-width: 100%;
   max-height: 100%;
