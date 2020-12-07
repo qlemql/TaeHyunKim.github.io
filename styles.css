@@ -367,6 +367,28 @@ button {
   color: yellowgreen;
 }
 
+/* Scroll */
+
+.arrowBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: brown;
+  color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  pointer-events: none;
+}
+
+.arrowBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;

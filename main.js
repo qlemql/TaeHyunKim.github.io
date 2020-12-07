@@ -40,11 +40,6 @@ contactMe.addEventListener("click", ()=>{
     scrollIntoView('#contact');
 });
 
-function scrollIntoView(selector){
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:"smooth", block:"center"});
-}
-
 // Make home slowly fade to transparent as the window scroll down
 
 const home = document.querySelector('#home');
@@ -53,3 +48,25 @@ const homeHight = home.getBoundingClientRect().height
 document.addEventListener('scroll',()=>{
     home.style.opacity = 1 - window.scrollY / homeHight;
 });
+
+// Show "Arrow up" Button when scrolling down
+
+const arrowUp = document.querySelector(".arrowBtn");
+
+document.addEventListener("scroll",()=>{
+    if(window.scrollY > homeHight / 2 ){
+        arrowUp.classList.add("visible");
+    } else{
+        arrowUp.classList.remove('visible')
+    }});
+
+// Handle click on the ""arrow up" button
+
+arrowUp.addEventListener("click",()=>{
+    scrollIntoView('#home');
+})
+
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:"smooth", block:"center"});
+}
