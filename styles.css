@@ -59,13 +59,12 @@ button {
   margin: 0 4px;
   cursor: pointer;
   border-radius: 4px;
-}
-
-.navbar__menu__item.active {
-  border: 1px solid white;
+  border: 1px solid transparent;
+  background-color: gray;
 }
 
 .navbar__menu__item:hover {
+  border-color: white;
   background-color: darksalmon;
 }
 
@@ -255,7 +254,7 @@ button {
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: tomato;
   color: white;
@@ -276,7 +275,7 @@ button {
   transition: all 300ms ease-out;
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
