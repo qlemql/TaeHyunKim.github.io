@@ -2,10 +2,7 @@
 
 // Make navbar transparent when it is on the top
 const navbar = document.querySelector("#navbar");
-
 const navbarHeight = navbar.getBoundingClientRect().height;
-
-
 document.addEventListener('scroll', () =>{
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar--gray')
@@ -46,7 +43,7 @@ contactMe.addEventListener("click", ()=>{
 
 // Make home slowly fade to transparent as the window scroll down
 
-const home = document.querySelector('#home');
+const home = document.querySelector('.home__container');
 const homeHight = home.getBoundingClientRect().height
 
 document.addEventListener('scroll',()=>{
@@ -110,5 +107,5 @@ workBtnContainer.addEventListener("click", (e)=>{
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:"smooth", block:"center"});
+    scrollTo.scrollIntoView({behavior:"smooth"});
 }

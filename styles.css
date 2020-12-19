@@ -1,3 +1,14 @@
+/* Global */
+
+:root {
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+}
+
 /* Universal tags */
 * {
   box-sizing: border-box;
@@ -24,6 +35,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Nav */
@@ -72,7 +84,7 @@ button {
   position: absolute;
   top: 18px;
   right: 32px;
-  font-size: 24px;
+  font-size: var(--font-medium);
   color: white;
   display: none;
 }
@@ -100,7 +112,7 @@ button {
 }
 
 .home__contact {
-  font-size: 16px;
+  font-size: var(--font-small);
   font-weight: 800;
   margin: 24px;
   padding: 8px 12px;
@@ -109,10 +121,14 @@ button {
   color: #000000;
 }
 
+.home__contact:hover {
+  background-color: orange;
+}
+
 /* Section common */
 
 .section {
-  padding: 50px;
+  padding: 70px;
   text-align: center;
   margin: auto;
 }
@@ -157,7 +173,7 @@ button {
 }
 
 .marjor__description {
-  font-size: 16px;
+  font-size: var(--font-small);
 }
 
 .study {
@@ -173,7 +189,7 @@ button {
 .study__logo {
   width: 70px;
   height: 70px;
-  font-size: 10px;
+  font-size: var(--font-small);
 }
 
 .study__name,
@@ -181,10 +197,10 @@ button {
   color: gray;
 }
 .study__name {
-  font-size: 16px;
+  font-size: var(--font-small);
 }
 .study__period {
-  font-size: 12px;
+  font-size: var(--font-micro);
 }
 
 #skills {
@@ -250,8 +266,9 @@ button {
 .category__btn {
   border: 1px solid rgb(87, 85, 85);
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--font-small);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -268,9 +285,9 @@ button {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all 300ms ease-out;
 }
@@ -360,6 +377,7 @@ button {
 .contact__email,
 .contact__rights {
   color: white;
+  font-size: var(--font-small);
 }
 
 .contact__title {
@@ -367,7 +385,7 @@ button {
 }
 
 .contact__links {
-  font-size: 18px;
+  font-size: var(--font-regular);
   margin: 24px 0;
   transition: all 300ms ease-in;
 }
@@ -385,7 +403,7 @@ button {
   right: 50px;
   width: 70px;
   height: 70px;
-  font-size: 50px;
+  font-size: var(--font-large);
   background-color: brown;
   color: white;
   border-radius: 50%;
@@ -400,8 +418,20 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 16px;
+    --font-regular: 14px;
+    --font-small: 12px
+    --font-micro: 10px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -422,16 +452,39 @@ button {
   .navbar__menu.open {
     display: block;
   }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
   .skillset {
     flex-direction: column;
   }
+
+  .category__btn{
+    margin: 4px 0px;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
+  }
+
+  .arrowBtn{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
