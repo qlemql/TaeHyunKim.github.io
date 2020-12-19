@@ -335,7 +335,7 @@ button {
 }
 
 .project__description h3 {
-  color: white;
+  color: orange;
 }
 
 .project__description h3:after {
@@ -343,9 +343,9 @@ button {
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: white;
 }
@@ -406,12 +406,21 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: gray;
+  }
+
+  #navbar.navbar--gray {
+    padding: 16px;
   }
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
   .about__majors {
     flex-direction: column;
