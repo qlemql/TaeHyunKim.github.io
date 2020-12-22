@@ -72,13 +72,49 @@ button {
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid transparent;
-  background-color: gray;
 }
 
 .navbar__menu__item:hover {
   border-color: white;
   background-color: darksalmon;
 }
+
+ul li div{
+  position: relative;
+  height: 25px;
+  display: block;
+  overflow: hidden;
+}
+
+ul li div::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul li div span{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  color: white;
+  transition-delay: 0.2s;
+}
+
+ul li div:hover span:nth-child(1){
+  transform: translateY(-100%);
+}
+
+ul li div:hover span:nth-child(2){
+  transform: translateY(-100%);
+}
+
 
 .navbar__toggle-btn {
   position: absolute;
@@ -436,7 +472,56 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: gray;
+  }
+
+  .navbar__menu__item:hover {
+    border-color: white;
+    background-color: red;
+  }
+
+
+  ul li div{
+    position: relative;
+    height: 25px;
+    display: block;
+    overflow: hidden;
+  }
+  
+  ul li div::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  ul li div:hover::before{
+    transform: scaleX(1);
+  }
+  
+  ul li div span{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    color: white;
+    transition-delay: 0.2s;
+  }
+  
+  ul li div:hover span:nth-child(1){
+    transform: translateY(-100%);
+  }
+  
+  ul li div:hover span:nth-child(2){
+    transform: translateY(-100%);
   }
 
   #navbar.navbar--gray {
